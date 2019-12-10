@@ -156,6 +156,9 @@
                             <failsOnError>true</failsOnError>
                             <includeResources>false</includeResources>
                             <includeTestResources>false</includeTestResources>
+                            <sourceDirectories>
+                                <sourceDirectory>${project.basedir}/src/main/java</sourceDirectory>
+                            </sourceDirectories>
                         </configuration>
                     </execution>
                 </executions>
