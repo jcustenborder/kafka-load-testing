@@ -1,0 +1,47 @@
+{
+  "name": "TagContainer",
+  "namespace": "com.github.jcustenborder.kafka.load.testing.model",
+  "type": "record",
+  "xml.expected.root.element": "tag",
+  "import.file.name": "Tags.xml",
+  "output.file.name.template": "tag%04d.avro",
+  "kafka.topic": "tag",
+  "fields": [
+    {
+      "name": "key",
+      "type": {
+        "name": "TagKey",
+        "type": "record",
+        "namespace": "com.github.jcustenborder.kafka.load.testing.model",
+        "fields": [
+          {
+            "name": "Id",
+            "type": "long"
+          }
+        ]
+      }
+    },
+    {
+      "name": "value",
+      "type": {
+        "name": "Tag",
+        "type": "record",
+        "namespace": "com.github.jcustenborder.kafka.load.testing.model",
+        "fields": [
+          {
+            "name": "Id",
+            "type": "long"
+          },
+          {
+            "name": "TagName",
+            "type": "string"
+          },
+          {
+            "name": "Count",
+            "type": "long"
+          }
+        ]
+      }
+    }
+  ]
+}
