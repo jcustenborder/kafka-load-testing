@@ -1,0 +1,58 @@
+{
+  "name": "PostLinkContainer",
+  "namespace": "com.github.jcustenborder.kafka.load.testing.model",
+  "type": "record",
+  "xml.expected.root.element": "postlink",
+  "import.file.name": "PostLinks.xml",
+  "output.file.name.template": "postlink%04d.avro",
+  "kafka.topic": "postlink",
+  "fields": [
+    {
+      "name": "key",
+      "type": {
+        "name": "PostLinkKey",
+        "type": "record",
+        "namespace": "com.github.jcustenborder.kafka.load.testing.model",
+        "fields": [
+          {
+            "name": "PostId",
+            "type": "long"
+          }
+        ]
+      }
+    },
+    {
+      "name": "value",
+      "type": {
+        "name": "PostLink",
+        "type": "record",
+        "namespace": "com.github.jcustenborder.kafka.load.testing.model",
+        "fields": [
+          {
+            "name": "Id",
+            "type": "long"
+          },
+          {
+            "name": "CreationDate",
+            "type": {
+              "type": "long",
+              "logicalType": "timestamp-millis"
+            }
+          },
+          {
+            "name": "PostId",
+            "type": ["null", "long"]
+          },
+          {
+            "name": "RelatedPostId",
+            "type": "long"
+          },
+          {
+            "name": "LinkTypeId",
+            "type": "int"
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,66 @@
+{
+  "name": "CommentContainer",
+  "namespace": "com.github.jcustenborder.kafka.load.testing.model",
+  "type": "record",
+  "xml.expected.root.element": "comments",
+  "import.file.name": "Comments.xml",
+  "output.file.name.template": "comments%04d.avro",
+  "kafka.topic": "comments",
+  "fields": [
+    {
+      "name": "key",
+      "type": {
+        "name": "CommentKey",
+        "namespace": "com.github.jcustenborder.kafka.load.testing.model",
+        "type": "record",
+        "fields": [
+          {
+            "name": "PostId",
+            "type": "long"
+          }
+        ]
+      }
+    },
+    {
+      "name": "value",
+      "type": {
+        "name": "Comment",
+        "namespace": "com.github.jcustenborder.kafka.load.testing.model",
+        "type": "record",
+        "fields": [
+          {
+            "name": "Id",
+            "type": "long"
+          },
+          {
+            "name": "PostId",
+            "type": "long"
+          },
+          {
+            "name": "Score",
+            "type": "long"
+          },
+          {
+            "name": "Text",
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          {
+            "name": "CreationDate",
+            "type": {
+              "type": "long",
+              "logicalType": "timestamp-millis"
+            }
+          },
+          {
+            "name": "UserId",
+            "type": "long"
+          }
+        ]
+      }
+    }
+  ]
+}
+

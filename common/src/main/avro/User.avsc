@@ -1,0 +1,104 @@
+{
+  "name": "UserContainer",
+  "namespace": "com.github.jcustenborder.kafka.load.testing.model",
+  "type": "record",
+  "xml.expected.root.element": "users",
+  "import.file.name": "Users.xml",
+  "output.file.name.template": "users%04d.avro",
+  "kafka.topic": "users",
+  "fields": [
+    {
+      "name": "key",
+      "type": {
+        "name": "UserKey",
+        "namespace": "com.github.jcustenborder.kafka.load.testing.model",
+        "type": "record",
+        "fields": [
+          {
+            "name": "AccountId",
+            "type": "long"
+          }
+        ]
+      }
+    },
+    {
+      "name": "value",
+      "type": {
+        "name": "User",
+        "namespace": "com.github.jcustenborder.kafka.load.testing.model",
+        "type": "record",
+        "fields": [
+          {
+            "name": "Id",
+            "type": "long"
+          },
+          {
+            "name": "Reputation",
+            "type": "long"
+          },
+          {
+            "name": "CreationDate",
+            "type": {
+              "type": "long",
+              "logicalType": "timestamp-millis"
+            }
+          },
+          {
+            "name": "DisplayName",
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+
+          {
+            "name": "LastAccessDate",
+            "type": {
+              "type": "long",
+              "logicalType": "timestamp-millis"
+            }
+          },
+
+          {
+            "name": "WebsiteUrl",
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          {
+            "name": "Location",
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          {
+            "name": "AboutMe",
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          {
+            "name": "Views",
+            "type": "long"
+          },
+          {
+            "name": "UpVotes",
+            "type": "long"
+          },
+          {
+            "name": "DownVotes",
+            "type": "long"
+          },
+          {
+            "name": "AccountId",
+            "type": "long"
+          }
+        ]
+      }
+    }
+  ]
+}
+

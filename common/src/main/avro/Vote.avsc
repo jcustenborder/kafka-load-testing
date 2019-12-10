@@ -1,0 +1,54 @@
+{
+  "name": "VoteContainer",
+  "namespace": "com.github.jcustenborder.kafka.load.testing.model",
+  "type": "record",
+  "xml.expected.root.element": "vote",
+  "import.file.name": "Votes.xml",
+  "output.file.name.template": "vote%04d.avro",
+  "kafka.topic": "vote",
+  "fields": [
+    {
+      "name": "key",
+      "type": {
+        "name": "VoteKey",
+        "type": "record",
+        "namespace": "com.github.jcustenborder.kafka.load.testing.model",
+        "fields": [
+          {
+            "name": "PostId",
+            "type": "long"
+          }
+        ]
+      }
+    },
+    {
+      "name": "value",
+      "type": {
+        "name": "Vote",
+        "type": "record",
+        "namespace": "com.github.jcustenborder.kafka.load.testing.model",
+        "fields": [
+          {
+            "name": "Id",
+            "type": "long"
+          },
+          {
+            "name": "VoteTypeId",
+            "type": "int"
+          },
+          {
+            "name": "PostId",
+            "type": "long"
+          },
+          {
+            "name": "CreationDate",
+            "type": {
+              "type": "long",
+              "logicalType": "timestamp-millis"
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

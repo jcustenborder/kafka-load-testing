@@ -1,0 +1,121 @@
+{
+  "name": "PostContainer",
+  "namespace": "com.github.jcustenborder.kafka.load.testing.model",
+  "type": "record",
+  "xml.expected.root.element": "posts",
+  "import.file.name": "Posts.xml",
+  "output.file.name.template": "posts%04d.avro",
+  "kafka.topic": "posts",
+  "fields": [
+    {
+      "name": "key",
+      "type": {
+        "name": "PostKey",
+        "namespace": "com.github.jcustenborder.kafka.load.testing.model",
+        "type": "record",
+        "fields": [
+          {
+            "name": "Id",
+            "type": "long"
+          }
+        ]
+      }
+    },
+    {
+      "name": "value",
+      "type": {
+        "name": "Post",
+        "namespace": "com.github.jcustenborder.kafka.load.testing.model",
+        "type": "record",
+        "fields": [
+          {
+            "name": "Id",
+            "type": "long"
+          },
+          {
+            "name": "PostTypeId",
+            "type": "int"
+          },
+          {
+            "name": "AcceptedAnswerId",
+            "type": [
+              "null",
+              "long"
+            ]
+          },
+          {
+            "name": "CreationDate",
+            "type": {
+              "type": "long",
+              "logicalType": "timestamp-millis"
+            }
+          },
+          {
+            "name": "Score",
+            "type": [
+              "null",
+              "long"
+            ]
+          },
+          {
+            "name": "ViewCount",
+            "type": [
+              "null",
+              "long"
+            ]
+          },
+          {
+            "name": "Body",
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          {
+            "name": "OwnerUserId",
+            "type": [
+              "null",
+              "long"
+            ]
+          },
+          {
+            "name": "LastActivityDate",
+            "type": {
+              "type": "long",
+              "logicalType": "timestamp-millis"
+            }
+          },
+          {
+            "name": "Title",
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          {
+            "name": "Tags",
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          {
+            "name": "AnswerCount",
+            "type": [
+              "null",
+              "long"
+            ]
+          },
+          {
+            "name": "CommentCount",
+            "type": [
+              "null",
+              "long"
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}
+

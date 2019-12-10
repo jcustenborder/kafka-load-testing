@@ -1,0 +1,72 @@
+{
+  "name": "PostHistoryContainer",
+  "namespace": "com.github.jcustenborder.kafka.load.testing.model",
+  "type": "record",
+  "xml.expected.root.element": "posthistory",
+  "import.file.name": "PostHistory.xml",
+  "output.file.name.template": "posthistory%04d.avro",
+  "kafka.topic": "posthistory",
+  "fields": [
+    {
+      "name": "key",
+      "type": {
+        "name": "PostHistoryKey",
+        "type": "record",
+        "namespace": "com.github.jcustenborder.kafka.load.testing.model",
+        "fields": [
+          {
+            "name": "Id",
+            "type": "long"
+          }
+        ]
+      }
+    },
+    {
+      "name": "value",
+      "type": {
+        "name": "PostHistory",
+        "type": "record",
+        "namespace": "com.github.jcustenborder.kafka.load.testing.model",
+        "fields": [
+          {
+            "name": "Id",
+            "type": "long"
+          },
+          {
+            "name": "PostHistoryTypeId",
+            "type": "int"
+          },
+          {
+            "name": "PostId",
+            "type": "long"
+          },
+          {
+            "name": "RevisionGUID",
+            "type": "string"
+          },
+          {
+            "name": "CreationDate",
+            "type": {
+              "type": "long",
+              "logicalType": "timestamp-millis"
+            }
+          },
+          {
+            "name": "UserId",
+            "type": [
+              "null",
+              "long"
+            ]
+          },
+          {
+            "name": "Text",
+            "type": [
+              "null",
+              "string"
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

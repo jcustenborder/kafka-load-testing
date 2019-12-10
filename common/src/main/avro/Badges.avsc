@@ -1,0 +1,66 @@
+{
+  "name": "BadgeContainer",
+  "namespace": "com.github.jcustenborder.kafka.load.testing.model",
+  "type": "record",
+  "xml.expected.root.element": "badges",
+  "import.file.name": "Badges.xml",
+  "output.file.name.template": "badges%04d.avro",
+  "kafka.topic": "badges",
+  "fields": [
+    {
+      "name": "key",
+      "type": {
+        "name": "BadgeKey",
+        "namespace": "com.github.jcustenborder.kafka.load.testing.model",
+        "type": "record",
+        "fields": [
+          {
+            "name": "Id",
+            "type": "long"
+          }
+        ]
+      }
+    },
+    {
+      "name": "value",
+      "type": {
+        "name": "Badge",
+        "namespace": "com.github.jcustenborder.kafka.load.testing.model",
+        "type": "record",
+        "fields": [
+          {
+            "name": "Id",
+            "type": "long"
+          },
+          {
+            "name": "UserId",
+            "type": "int"
+          },
+          {
+            "name": "Name",
+            "type": [
+              "null",
+              "string"
+            ]
+          },
+          {
+            "name": "Date",
+            "type": {
+              "type": "long",
+              "logicalType": "timestamp-millis"
+            }
+          },
+          {
+            "name": "Class",
+            "type": "int"
+          },
+          {
+            "name": "TagBased",
+            "type": "boolean"
+          }
+        ]
+      }
+    }
+  ]
+}
+
